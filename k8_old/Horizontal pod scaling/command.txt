@@ -1,0 +1,26 @@
+it automatically scale and scal down the pod .
+
+create a mainifest metricserver.yaml
+#kubectl apply -f metricserver.yaml
+#kubectl get namespace 
+#kubectl get pods -n kube-system     you will see the metric server pod in this 
+#kubectl log -f metric-server(nameof the pod) -n kube-system
+
+now create a pod deployhpa.yml by defining the limit and request of the cpu.
+#kubectl apply -f deployhpa.yml
+
+#kubectl get all
+
+now run the command 
+#kubectl autoscale deployment mydeploy --cpu-percent=20 --min=1 --max=10
+
+#kubectl get all
+#watch kubectl get all  
+
+take the putty session 
+now go inside of the container do some work 
+#apt-get update again and again 
+
+so you will see the pod is increasing as the cpu uses is increasing in main machine 
+#watch kubectl get all
+

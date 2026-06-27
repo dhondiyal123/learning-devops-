@@ -1,0 +1,50 @@
+emptydir.yml [it shares the volume for two container in a pod ]
+   volumeMounts:                                    # Mount definition inside the container
+      - name: xchange                               # volume mount name in both container this need be the same in both container and volume 
+        mountPath: "/tmp/xchange"                   # mount path of 1 container 
+  - name: c2
+    image: centos
+    command: ["/bin/bash", "-c", "sleep 10000"]
+    volumeMounts:
+      - name: xchange
+        mountPath: "/tmp/data"                       #mount path of 2 container 
+  volumes:                                                   
+  - name: xchange
+    emptyDir: {}                           #we have given the empty dir 
+
+now we can go inside the container and check if both container is sharing the same volume 
+
+-------hostpat----------
+this sahre volume from out host to our pod/container
+   volumeMounts:
+    - mountPath: /tmp/hostpath     #this is container path of volume
+      name: testvolume
+  volumes:
+  - name: testvolume
+    hostPath:               #specified the hostpath
+      path: /tmp/data       # this is our path in our hostmachine 
+
+now it will share the volume of host and the container if we will save our data in /tmp/hostpath of container it will seen by /tmp/data in our host machine .
+
+-------persistance volume----------
+this is when we add storage from the cloud or storage nfs 
+
+#kubectl get pv
+
+now you have to claim the persistance volume so craete a mainifest
+mypresistancevolumeclaim.yml
+
+#kubectl get pv
+you will see bound in status 
+
+after the claim we need to use it in the pod  deploypvc.yml
+volumes:
+        - name: mypd
+          persistentVolumeClaim:
+            claimName: myebsvolclaim      #this is connected to presistancevolumeclaim.yml
+
+# kubectl get deploy
+# kubectl get rs 
+# kubectl get pods
+
+if the pod gets deleated we will get our data in the cloud storage or nfs
