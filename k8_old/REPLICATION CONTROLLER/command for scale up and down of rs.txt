@@ -1,0 +1,6 @@
+if we want to scale up and down  our replica pod 
+
+#kubectl scale --replicas=8 rc -l myname=manoj
+
+
+[myname=manoj] = label 

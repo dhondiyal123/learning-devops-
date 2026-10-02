@@ -1,0 +1,23 @@
+Good Hands-on Experience with GIT/GITHUB version control system.
+Worked on Branching, Tagging and Release Activities on VersionControl Tools (GIT) and setting up the GIT repos.
+Strong working knowledge and proficiency in JENKINS for CICD andend-to-end automation for application build and deployments.
+Strong Setting up Jenkins Continuous Integration with Master Slavesetup and
+·	Responsible for Docker container creation and management, Docker file management, deployment of micro services to container.
+·	Responsible for server configuration management via Ansible and environments management.
+·	Have worked on container management tool Kubernetes. Kubernetes clusters setup for application deployment, managing pods, replica sets, Kubernetes networking.
+·	Have worked on Docker container, image management,. Implementation of docker best practices.
+●	Experienced in DevOps tools such as , Virtualbox, Ansible, Jenkins, Maven,  GIT, and Docker.
+●	Experienced in Branching, Merging, Tagging and maintaining the version across the environments using SCM tools like GIT on Linux platforms.
+●	Worked with GIT version controls. Setting up new development branches, merging branches, facilitating the releases.
+●	Setting up the new repos, managing the permissions for various GIT branches. Creating adhoc GIT stashes.
+●	Worked on installing of Docker using Docker toolbox. Created Docker images using a Docker file. Worked on Docker container snapshots, removing images, and managing Docker volumes.
+•	Experience in Installing Docker, Docker Image creation, Compose, Stack and Service concepts.
+•	Working on Kubernetes PODS, Deployments and Rolling Updates.
+•	Created CI/CD Pipeline jobs using continuous integration tools like Jenkins.
+•	Experienced Troubleshooting Image & Control Plane Failure.
+•	Well-versed in Technologies like Docker, Kubernetes, Jenkins, Managed Kubernetes service  and Git.
+
+
+
+
+

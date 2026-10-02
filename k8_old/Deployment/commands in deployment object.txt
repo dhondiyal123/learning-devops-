@@ -1,0 +1,24 @@
+rollback to a specific version specifing it with --to -revision
+#kubectl rollout undo deploy/mydeployments --to-revision=2
+
+to go to one version back
+#kubectl rollour undo deploy/mydeployment
+ 
+Basic command 
+
+#kubectl get deploy
+#kubectl describe deploy mydeployments
+#kubectl get rs
+
+
+to scale up and scale down 
+#kubectl scal --replicas=1 deploy mydeployment
+
+to check what is running inside 
+#kubectl log -f <podname>
+
+to check status 
+#kubectl rollout status deployment mydeployment
+
+to check history 
+#kubectl rollout history deployment mydeployment 

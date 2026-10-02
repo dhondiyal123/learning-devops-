@@ -1,0 +1,6 @@
+go inside the first container 
+#kubectl exec testpod -it -c coo -- /bin/bash
+
+now install curl
+#apt update && apt install curl 
+#curl localhost:80

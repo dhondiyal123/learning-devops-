@@ -1,0 +1,12 @@
+jobs are like pods .
+these are created for a specific task to do , they do not get deleated auto , we need to delete it pods will get auto terminate after the job compleates.
+#jobs.yml
+#kubectl delete -f jobs.yml
+
+Parallism {when we need to make more then 1 pod for specific task }
+#parallelism.yml
+
+Cron job pattern {jobs to schedule predically by time specific} *****
+#cornjob.yml
+
+#init.yml {it run before the main container once init container are created then main container are created and init container are deletaed}

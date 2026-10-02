@@ -1,0 +1,34 @@
+-----------------request quota----------------
+
+create a file podresources.yml by providing the request and limit 
+apply this podresources.yml
+#kubectl describe pod resources
+
+now create resourcequota.yml  this is an object 
+
+now create a pod testpod.yml by specifing the 
+ resources:
+            requests:
+              cpu: "200m"
+we have requested 200m cpu for this deploymnet object 
+
+it will not create the pod beacuse in resourcequota.yml we have set the limit of 400m but in testpod.yml 
+we have created 3 replica of 200m 200*3=600 each so that is greater then set limit which is 400m.
+
+#kubectl describe rs (rsname)
+
+now create a cupdefault.yml 
+ now this will create the pod beacuse we have requested the 200m cpu in testpod.yml 
+----------------
+
+now if we have defined the limit but not request in cpu2.yml so 
+limit=request
+
+#kubectl describe pod (podname)
+
+now if we have define the request but not defined the limit cpu3.yml
+limit=default {1=default}
+
+
+
+

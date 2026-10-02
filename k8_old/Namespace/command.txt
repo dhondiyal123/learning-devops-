@@ -1,0 +1,25 @@
+create a namespace namespace.yml 
+
+you can create the namespace by
+#kubectl create namespave dev    [dev=namespace name]
+
+#kubectl get namespace 
+
+to delete the namespace 
+#kubectl delete namespace manoj
+
+now create a pod pod.yml in our  namspace 
+
+#kubectl apply -f pod.yml -n dev 
+
+check pod in our namespace 
+#kubectl get pods -n dev
+
+to delete the pod in namespace 
+#kubectl delete -f pod.yml -n dev 
+
+if we want to check our pod aur execute our command in our namespace insted of default namespace 
+#kubectl config set-context $(kubectl config current-context) --namespace=dev
+
+how do we know kubernetese is searching in ournamespace 
+#kubectl config view | grep namespace:

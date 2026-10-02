@@ -1,0 +1,48 @@
+it can be accessed by 2 ways 
+by env variable or by volumes
+
+
+----------by volume-------
+
+create a configmap  sample.conf
+
+#kubectl create configmap mymap --from-file=sample.conf 
+#kubectl get configmap
+# kubectl describe configmap mymap
+
+
+now create a pod deployconfigmap.yml 
+now go inside the contained and check the sample.conf is there in "/tmp/config"
+
+-----------by environmentvariable--------
+
+create a mainifest deployenv.yml
+
+ env:
+    - name: MYENV         # env name in which value of the key is stored
+      valueFrom:
+        configMapKeyRef:
+          name: mymap      # name of the config created
+          key: sample.conf
+ now go inside container 
+
+ #env
+
+ it will not copy the whole file it will only read the sample.conf file 
+
+ #echo $MYENV
+
+
+ --------------------secret--------------
+
+ first cteate two file as username.txt and password.txt
+ #echo "root" > username.txt; echo "password" > password.txt
+
+ #kubectl create secret generic mysecret --from-file=username.txt --from-file=password.txt 
+ #kubectl get secret 
+ #kubectl describe secrer mysecret
+
+now create a pod deploysecret.yml
+
+now go inside the pod 
+/tmp/mysecrets   in you will able to see the secret file 

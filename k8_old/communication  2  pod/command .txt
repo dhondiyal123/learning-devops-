@@ -1,0 +1,7 @@
+create 2 pod with differen images 
+
+pod1.yml , pod2.yml 
+
+#kubectl get pod -o wide   to check details about pod 
+
+#curl ipaddressofpod:80

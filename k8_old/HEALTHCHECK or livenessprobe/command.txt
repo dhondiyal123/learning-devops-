@@ -1,0 +1,16 @@
+livenessprove is for if the application in container is working fine 
+
+  livenessProbe:                                          
+      exec:
+        command:                                         
+        - cat                # this is only for eg if we delete the file in /tmp/helathy it will give us error as non zero number 
+        - /tmp/healthy        # if all is working fine it will give us 0
+      initialDelaySeconds: 5          
+      periodSeconds: 5                                 
+      timeoutSeconds: 30
+
+
+go inside the container 
+
+#echo $?
+ 0 = healthy 
